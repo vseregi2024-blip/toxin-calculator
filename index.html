@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Расчет токсина на 1 деление шприца</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Онлайн-калькулятор</p>
+          <h1>Расчет ботокса: единиц токсина в 1 делении шприца</h1>
+          <ol class="hero__steps">
+            <li>Напишите в мл, каким количеством физраствора вы хотите развести токсин.</li>
+            <li>Укажите, какой у вас шприц.</li>
+            <li>Напишите, сколько делений в вашем шприце.</li>
+            <li>Укажите, сколько единиц токсина во флаконе.</li>
+            <li>Нажмите кнопку «Рассчитать».</li>
+          </ol>
+          <p class="hero__text">
+            В ответе вы получите количество единиц токсина в одном делении.
+          </p>
+        </div>
+      </section>
+
+      <section class="calculator" aria-labelledby="calculator-title">
+        <div class="panel input-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Данные</p>
+            <h2 id="calculator-title">Заполните розовые поля</h2>
+          </div>
+
+          <form id="toxin-form" class="form">
+            <label class="field">
+              <span>Объем NaCl, мл</span>
+              <input id="volume" type="number" min="0.01" step="0.01" value="3" required />
+            </label>
+
+            <label class="field">
+              <span>Шприц</span>
+              <select id="syringe">
+                <option value="100">U-100, 100 делений</option>
+                <option value="50">U-100, 50 делений</option>
+                <option value="40">U-40, 40 делений</option>
+                <option value="100">U-100 0,5 мл, 100 делений</option>
+                <option value="100">U-100 0,3 мл, 100 делений</option>
+                <option value="custom">Другое количество делений</option>
+              </select>
+            </label>
+
+            <label class="field custom-field" id="custom-field" hidden>
+              <span>Количество делений в шприце</span>
+              <input id="custom-divisions" type="number" min="1" step="1" value="100" />
+            </label>
+
+            <label class="field">
+              <span>Единиц токсина во флаконе</span>
+              <input id="units" type="number" min="1" step="1" value="100" required />
+            </label>
+
+            <button class="calculate-button" type="submit">Рассчитать</button>
+          </form>
+        </div>
+
+        <aside class="panel result-panel" aria-live="polite">
+          <p class="eyebrow">Ключевой результат</p>
+          <p class="result-hint" id="result-hint">Заполните поля и нажмите «Рассчитать».</p>
+          <div class="result-value">
+            <span id="result">—</span>
+            <small>ед. / 1 деление</small>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
