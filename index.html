@@ -16,16 +16,22 @@
     <main class="page">
       <section class="hero">
         <div class="hero__content">
-          <p class="eyebrow">Онлайн-калькулятор</p>
-          <h1>Расчёт единиц токсина в одном делении шприца</h1>
+          <div class="hero__topbar">
+            <p class="eyebrow" data-i18n="eyebrow">Онлайн-калькулятор</p>
+            <div class="language-switcher" role="group" aria-label="Language switcher">
+              <button class="language-switcher__button is-active" type="button" data-lang="ru">RU</button>
+              <button class="language-switcher__button" type="button" data-lang="uk">UA</button>
+            </div>
+          </div>
+          <h1 data-i18n="hero_title">Расчёт, сколько единиц токсина в одном делении шприца</h1>
           <ol class="hero__steps">
-            <li>Напишите в мл, каким количеством физраствора вы хотите развести токсин.</li>
-            <li>Укажите, какой у вас шприц.</li>
-            <li>Напишите, сколько делений в вашем шприце.</li>
-            <li>Укажите, сколько единиц токсина во флаконе.</li>
-            <li>Нажмите кнопку «Рассчитать».</li>
+            <li data-i18n="step_1">Напишите в мл, каким количеством физраствора вы хотите развести токсин.</li>
+            <li data-i18n="step_2">Укажите, какой у вас шприц.</li>
+            <li data-i18n="step_3">Напишите, сколько делений в вашем шприце.</li>
+            <li data-i18n="step_4">Укажите, сколько единиц токсина во флаконе.</li>
+            <li data-i18n="step_5">Нажмите кнопку «Рассчитать».</li>
           </ol>
-          <p class="hero__text">
+          <p class="hero__text" data-i18n="hero_text">
             В ответе вы получите количество единиц токсина в одном делении.
           </p>
         </div>
@@ -34,48 +40,48 @@
       <section class="calculator" aria-labelledby="calculator-title">
         <div class="panel input-panel">
           <div class="section-heading">
-            <p class="eyebrow">Данные</p>
-            <h2 id="calculator-title">Заполните розовые поля</h2>
+            <p class="eyebrow" data-i18n="data_eyebrow">Данные</p>
+            <h2 id="calculator-title" data-i18n="calculator_title">Заполните розовые поля</h2>
           </div>
 
           <form id="toxin-form" class="form">
             <label class="field">
-              <span>Объем NaCl, мл</span>
+              <span data-i18n="label_volume">Объем NaCl, мл</span>
               <input id="volume" type="number" min="0.01" step="0.01" value="3" required />
             </label>
 
             <label class="field">
-              <span>Шприц</span>
+              <span data-i18n="label_syringe">Шприц</span>
               <select id="syringe">
-                <option value="100">U-100, 100 делений</option>
-                <option value="50">U-100, 50 делений</option>
-                <option value="40">U-40, 40 делений</option>
-                <option value="100">U-100 0,5 мл, 100 делений</option>
-                <option value="100">U-100 0,3 мл, 100 делений</option>
-                <option value="custom">Другое количество делений</option>
+                <option value="100" data-i18n="option_u100_100">U-100, 100 делений</option>
+                <option value="50" data-i18n="option_u100_50">U-100, 50 делений</option>
+                <option value="40" data-i18n="option_u40_40">U-40, 40 делений</option>
+                <option value="100" data-i18n="option_u100_05">U-100 0,5 мл, 100 делений</option>
+                <option value="100" data-i18n="option_u100_03">U-100 0,3 мл, 100 делений</option>
+                <option value="custom" data-i18n="option_custom">Другое количество делений</option>
               </select>
             </label>
 
             <label class="field custom-field" id="custom-field" hidden>
-              <span>Количество делений в шприце</span>
+              <span data-i18n="label_custom_divisions">Количество делений в шприце</span>
               <input id="custom-divisions" type="number" min="1" step="1" value="100" />
             </label>
 
             <label class="field">
-              <span>Единиц токсина во флаконе</span>
+              <span data-i18n="label_units">Единиц токсина во флаконе</span>
               <input id="units" type="number" min="1" step="1" value="100" required />
             </label>
 
-            <button class="calculate-button" type="submit">Рассчитать</button>
+            <button class="calculate-button" type="submit" data-i18n="button_calculate">Рассчитать</button>
           </form>
         </div>
 
         <aside class="panel result-panel" aria-live="polite">
-          <p class="eyebrow">Ключевой результат</p>
+          <p class="eyebrow" data-i18n="result_eyebrow">Ключевой результат</p>
           <p class="result-hint" id="result-hint">Заполните поля и нажмите «Рассчитать».</p>
           <div class="result-value">
             <span id="result">—</span>
-            <small>ед. / 1 деление</small>
+            <small data-i18n="result_unit">ед. / 1 деление</small>
           </div>
         </aside>
       </section>
